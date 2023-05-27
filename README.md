@@ -1,7 +1,8 @@
 # analyseEtlFlow.py
-analyseETLFlow.py is a tool which can be used to Analyse an ETL Flow and Visualise it in the form of Mermaid Graph/Flow Diagram.
+The tool, analyseETLFlow.py lives up to its name by providing a powerful solution for analyzing and visualizing ETL (Extract, Transform, Load) flows. It allows data engineers to gain insights into the intricacies of these flows by generating Mermaid Graphs or Flow Diagrams. In the field of data engineering, SQL code is frequently encountered, and it becomes crucial to analyze it in order to identify the dependencies, as well as the sources and targets involved. 
 
-In the feild of data engineering, we often come across SQL code and we try to analyse it and find the dependencies/source & target used in the SQL. For Example, consider the below SQL, lets call it as bus_unit.sql.
+## Background
+For instance, let's take the following SQL code as an example, which we'll refer to as bus_unit.sql.
 
 ```SQL
 INSERT INTO BUS_UNIT
@@ -54,12 +55,12 @@ analyseEtlFlow.py can be used to easily analyse/Explore large & complex ETL flow
 
 Here is the directory structure.
 
+## Installation 
+
 this repo can be cloned using the below command. 
 
-SQL files can be placed the sql folder or path of sql files can be mentioned the 
-```python 
-inputDir
-``` 
-variable.
+## Usage
+
+SQL files can be placed the sql folder or path of sql files can be mentioned the ```inputDir``` variable.
 
 
