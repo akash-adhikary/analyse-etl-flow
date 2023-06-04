@@ -71,7 +71,7 @@ def processSQL(content):
         dependencies.remove('(\n')
     return(list(set(dependencies)))
 
-visualizeFlow(['BUS_UNIT'])
+visualizeFlow(['EMPLOYEE'])
 
 
 
