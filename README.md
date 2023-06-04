@@ -1,8 +1,8 @@
 # analyseEtlFlow.py
-The tool, analyseETLFlow.py lives up to its name by providing a powerful solution for analyzing and visualizing ETL (Extract, Transform, Load) flows. It allows data engineers to gain insights into the intricacies of these flows by generating Mermaid Graphs or Flow Diagrams. In the field of data engineering, SQL code is frequently encountered, and it becomes crucial to analyze it in order to identify the dependencies, as well as the sources and targets involved. 
+## 1. Introduction
+analyseETLFlow.py is a tool which can be used to Visualise an ETL flow in the form of Mermaid Graph/Flow Diagram.
 
-## Background
-For instance, let's take the following SQL code as an example, which we'll refer to as bus_unit.sql.
+In the feild of data engineering, we often come across SQL code and we try to analyse it and find the dependencies/source & target used in the SQL. For Example, consider the below SQL, lets call it as bus_unit.sql.
 
 ```SQL
 INSERT INTO BUS_UNIT
@@ -15,9 +15,9 @@ Here, BUS_UNIT can be classified as Target table and the sources are BUS_UNIT_ST
 
 ```mermaid
 graph LR;
-BUS_UNIT -->bus_unit.sql;
-bus_unit.sql:::sqlClass -->GEO;
-bus_unit.sql:::sqlClass -->BUS_UNIT_STG;
+BUS_UNIT<--bus_unit.sql;
+bus_unit.sql:::sqlClass<--GEO;
+bus_unit.sql:::sqlClass<--BUS_UNIT_STG;
 classDef sqlClass fill:#f96;
 ```
 It is also possible that GEO & BUS_UNIT_STG might not be the true source for BUS_UNIT table. There can be some transformation Logic hich is used to populate GEO & BUS_UNIT_STG.
@@ -32,19 +32,19 @@ SELECT * FROM GEO_STG WHERE DELETE_DTM IS NOT NULL;
 ```
 ```mermaid
 graph LR;
-GEO -->geo.sql;
-geo.sql:::sqlClass -->GEO_STG;
+GEO<--geo.sql;
+geo.sql:::sqlClass<--GEO_STG;
 classDef sqlClass fill:#f96;
 ```
 
 This is used to populate GEO table which was one of the source table for BUS_UNIT. now the complete flow would look like this :- 
 ```mermaid
 graph LR;
-BUS_UNIT -->bus_unit.sql;
-bus_unit.sql:::sqlClass -->GEO;
-bus_unit.sql:::sqlClass -->BUS_UNIT_STG;
-GEO -->geo.sql;
-geo.sql:::sqlClass -->GEO_STG;
+BUS_UNIT<--bus_unit.sql;
+bus_unit.sql:::sqlClass<--GEO;
+bus_unit.sql:::sqlClass<--BUS_UNIT_STG;
+GEO<--geo.sql;
+geo.sql:::sqlClass<--GEO_STG;
 classDef sqlClass fill:#f96;
 ```
 
@@ -52,15 +52,20 @@ This shows that Analysis of SQLs and discoveing dependencies is an iterative pro
 Source table exploration can help in estimation & planning of the project. Visualizing ETL Flow in the form of Flow charts/Diagram con help the users to under the complexity of the ETL pipeline and resolve dependencies.
 
 analyseEtlFlow.py can be used to easily analyse/Explore large & complex ETL flows and create documentation.
-
+## 2. Directory Structure of the repository
 Here is the directory structure.
 
-## Installation 
+## 3. Installation
+this repo can be cloned to local using the below command. 
+```bash
+gh repo clone akash-adhikary/analyseEtlFlow
+```
 
-this repo can be cloned using the below command. 
-
-## Usage
-
-SQL files can be placed the sql folder or path of sql files can be mentioned the ```inputDir``` variable.
+## 4. Usage
+SQL files can be placed the sql folder or path of sql files can be mentioned the 
+```python 
+inputDir
+``` 
+variable.
 
 
