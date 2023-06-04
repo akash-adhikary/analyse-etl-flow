@@ -15,9 +15,9 @@ Here, BUS_UNIT can be classified as Target table and the sources are BUS_UNIT_ST
 
 ```mermaid
 graph LR;
-BUS_UNIT -->bus_unit.sql;
-bus_unit.sql:::sqlClass -->GEO;
-bus_unit.sql:::sqlClass -->BUS_UNIT_STG;
+BUS_UNIT<--bus_unit.sql;
+bus_unit.sql:::sqlClass<--GEO;
+bus_unit.sql:::sqlClass<--BUS_UNIT_STG;
 classDef sqlClass fill:#f96;
 ```
 It is also possible that GEO & BUS_UNIT_STG might not be the true source for BUS_UNIT table. There can be some transformation Logic hich is used to populate GEO & BUS_UNIT_STG.
@@ -32,19 +32,19 @@ SELECT * FROM GEO_STG WHERE DELETE_DTM IS NOT NULL;
 ```
 ```mermaid
 graph LR;
-GEO -->geo.sql;
-geo.sql:::sqlClass -->GEO_STG;
+GEO<--geo.sql;
+geo.sql:::sqlClass<--GEO_STG;
 classDef sqlClass fill:#f96;
 ```
 
 This is used to populate GEO table which was one of the source table for BUS_UNIT. now the complete flow would look like this :- 
 ```mermaid
 graph LR;
-BUS_UNIT -->bus_unit.sql;
-bus_unit.sql:::sqlClass -->GEO;
-bus_unit.sql:::sqlClass -->BUS_UNIT_STG;
-GEO -->geo.sql;
-geo.sql:::sqlClass -->GEO_STG;
+BUS_UNIT<--bus_unit.sql;
+bus_unit.sql:::sqlClass<--GEO;
+bus_unit.sql:::sqlClass<--BUS_UNIT_STG;
+GEO<--geo.sql;
+geo.sql:::sqlClass<--GEO_STG;
 classDef sqlClass fill:#f96;
 ```
 
