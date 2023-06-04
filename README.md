@@ -54,7 +54,10 @@ analyseEtlFlow.py can be used to easily analyse/Explore large & complex ETL flow
 
 Here is the directory structure.
 
-this repo can be cloned using the below command. 
+this repo can be cloned to local using the below command. 
+```bash
+gh repo clone akash-adhikary/analyseEtlFlow
+```
 
 SQL files can be placed the sql folder or path of sql files can be mentioned the 
 ```python 
