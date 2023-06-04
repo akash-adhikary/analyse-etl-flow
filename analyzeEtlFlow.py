@@ -13,7 +13,7 @@ input_dir=f"{dir_path}{os.sep }sql"
 def visualizeFlow(tableName):
     tablesProcessed=[]
     tables2beProcessed=tableName.copy()
-    mermaidData=exploreFlow(tables2beProcessed,tablesProcessed,"graph LR;\n")
+    mermaidData=exploreFlow(tables2beProcessed,tablesProcessed,"graph RL;\n")
     print(mermaidData)
     korkiLink="https://kroki.io/mermaid/svg/"+base64.urlsafe_b64encode(zlib.compress(mermaidData.encode('utf-8'), 9)).decode('ascii')
     print(korkiLink)
@@ -30,9 +30,9 @@ def exploreFlow(tables2beProcessed,tablesProcessed,mermaidContent):
                 print(meta['targetTable'])
                 print(meta['sqlName'])
                 print(meta['dependencies'])
-                mermaidContent+=f"{meta['targetTable']} -->{meta['sqlName']};\n"
+                mermaidContent+=f"{meta['sqlName']} -->{meta['targetTable']};\n"
                 for tab in meta['dependencies']:
-                    mermaidContent+=f"{meta['sqlName']}:::sqlClass -->{tab};\n"
+                    mermaidContent+=f"{tab} -->{meta['sqlName']}:::sqlClass;\n"
                 tables2beProcessed.extend(meta['dependencies'])
                 tables2beProcessed=list(set(tables2beProcessed))
             tables2beProcessed.remove(table)

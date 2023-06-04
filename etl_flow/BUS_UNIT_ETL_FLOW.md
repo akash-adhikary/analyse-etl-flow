@@ -1,12 +1,12 @@
 # Mermaid Js Diagram for BUS_UNIT
 ```mermaid
-graph LR;
-BUS_UNIT -->bus_unit.sql;
-bus_unit.sql:::sqlClass -->GEO;
-bus_unit.sql:::sqlClass -->BUS_UNIT_STG;
-GEO -->geo.sql;
-geo.sql:::sqlClass -->GEO_STG;
+graph RL;
+bus_unit.sql -->BUS_UNIT;
+GEO -->bus_unit.sql:::sqlClass;
+BUS_UNIT_STG -->bus_unit.sql:::sqlClass;
+geo.sql -->GEO;
+GEO_STG -->geo.sql:::sqlClass;
 classDef sqlClass fill:#f96;
 ```
 # Mermaid Js Link (Open Via Browser)
-[Mermaid JS API](https://kroki.io/mermaid/svg/eNpLL0osyFDwCbLmcgoNjg_18wxR0NW1Syotji_NyyzRKy7MseZC5llZWQFJ55zE4mKQQndXf7zyMEPjg0PcrbmAqkGC6an5EIOhDEwzIcqTQSIuqWkKcNm0zJwcK-U0SzNrANqTPAY=)
+[Mermaid JS API](https://kroki.io/mermaid/svg/eNpLL0osyFAI8rHmSiotji_NyyzRKy7MUdDVtXMKDY4P9fMMseZyd_UHCSArsLKyApLOOYnFxdZcMJXxwSHueBWmp-bDTAeaCTYYpgcqhaI8GUS5pKYpwIQU0jJzcqyU0yzNrAGn8jwG)
