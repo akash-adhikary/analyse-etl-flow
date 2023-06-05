@@ -1,5 +1,4 @@
 ## Table of Contents
-- [analyseEtlFlow.py](#analyseetlflowpy)
   - [Table of Contents](#table-of-contents)
   - [1. Introduction](#1-introduction)
   - [2. Directory Structure of the repository](#2-directory-structure-of-the-repository)
