@@ -22,11 +22,27 @@ WHERE A.ELETE_DTM IS NOT NULL;
 Here, BUS_UNIT can be classified as Target table and the sources are BUS_UNIT_STG & GEO. Below diagram depicts the same. 
 
 ```mermaid
+%%{
+  init: {
+  "theme": "base",
+    "themeVariables": {
+      "primaryColor": "#76a5af",
+      "primaryTextColor": "#fff",
+      "primaryBorderColor": "#00000",
+      "lineColor": "#AAAA",
+      "secondaryColor": "#006100",
+      "tertiaryColor": "#fff"
+    }
+}
+ }%%
+ 
+
 graph RL;
-bus_unit.sql -->BUS_UNIT;
-GEO -->bus_unit.sql:::sqlClass;
-BUS_UNIT_STG -->bus_unit.sql:::sqlClass;
-classDef sqlClass fill:#f96;
+A(bus_unit.sql) -->B(BUS_UNIT);
+C(GEO) -->A(bus_unit.sql):::sqlClass;
+D(BUS_UNIT_STG) -->A(bus_unit.sql):::sqlClass;
+classDef sqlClass fill:#6f929a;
+
 ```
 It is also possible that GEO & BUS_UNIT_STG might not be the true source for BUS_UNIT table. There can be some transformation Logic hich is used to populate GEO & BUS_UNIT_STG.
 
@@ -80,7 +96,7 @@ Here is the directory structure.
 
 To download this repo download it directly from github and extract, or it can be also cloned via github cli using the below command.
 ```bash
-gh repo clone akash-adhikary/analyseEtlFlow
+gh repo clone akash-adhikary/analyse-etl-flow
 ```
 
 ## 4. Usage
