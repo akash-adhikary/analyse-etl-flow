@@ -59,7 +59,7 @@ classDef sqlClass fill:#f96;
 This shows that Analysis of SQLs and discoveing dependencies is an iterative process and performing it manually can be timeconsuming and labour intensive as in most of the  cases, the number of tables or SQLs can be in hundreds or thousands. 
 Source table exploration can help in estimation & planning of the project. Visualizing ETL Flow in the form of Flow charts/Diagram con help the users to under the complexity of the ETL pipeline and resolve dependencies.
 
-analyseEtlFlow.py can be used to easily analyse/Explore large & complex ETL flows and create documentation. refer to [usage](#4-usage) section to better understand how the script can be used to generate these diagrams.
+analyse-etl-flow.py can be used to easily analyse/Explore large & complex ETL flows and create documentation. refer to [usage](#4-usage) section to better understand how the script can be used to generate these diagrams.
 
 ## 2. Directory Structure of the repository
 Here is the directory structure.
