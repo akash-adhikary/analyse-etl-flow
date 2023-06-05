@@ -1,12 +1,12 @@
 ## Table of Contents
-  - [Table of Contents](#table-of-contents)
-  - [1. Introduction](#1-introduction)
-  - [2. Directory Structure of the repository](#2-directory-structure-of-the-repository)
-  - [3. Installation](#3-installation)
-  - [4. Usage](#4-usage)
-    - [Mermaid Js Diagram for EMPLOYEE](#mermaid-js-diagram-for-employee)
-    - [Mermaid Js Link (Open Via Browser)](#mermaid-js-link-open-via-browser)
-  - [5. Future Scope](#5-future-scope)
+- [Table of Contents](#table-of-contents)
+- [1. Introduction](#1-introduction)
+- [2. Directory Structure of the repository](#2-directory-structure-of-the-repository)
+- [3. Installation](#3-installation)
+- [4. Usage](#4-usage)
+  - [Mermaid Js Diagram for EMPLOYEE](#mermaid-js-diagram-for-employee)
+  - [Mermaid Js Link (Open Via Browser)](#mermaid-js-link-open-via-browser)
+- [5. Future Scope](#5-future-scope)
 ## 1. Introduction
 analyse-etl-flow.py is a tool which can be used to Visualise an ETL flow in the form of Mermaid Graph/Flow Diagram.
 
@@ -136,6 +136,6 @@ classDef sqlClass fill:#f96;
 [Mermaid JS API](https://kroki.io/mermaid/svg/eNqFkV0LgjAUhu_9FULXdhnkIDAdIviFzouuhtk0wY_l9P-n1aktkm42OOc5z97DqiHnVz3xkVb03ZAXI2Ut34pboxvGAQexH50wRpqDY7JUviDTNOfTbnIhkHbMUpqF3l_OjkKSWDahs56mxP3Hcza0v1PFOAlki0wqCoi_CsjZV6EL4yOEWIxPLzwO3a9dgxiHqUW8KFyFzpOgU1e_3RAGaS6OloIM_IwNGVbBivVgn50PMcy8Wgpe9C1nncjHuu9gTl5FXezzieqUqlwuh5U6lPSybhpzU-536A5QztL-)
 
 ## 5. Future Scope
-1. In future this script can be enhanced to handle collapsable graph which will help in managing large ETL diagrams and add modularity.
+1. In future this script can be enhanced to handle collapsible graph which will help in managing large ETL diagrams and add modularity.
 2. currently this script can parse SQL files and extract meaningful information only if the input files have the right SQL syntax. more language support can be added.
 
