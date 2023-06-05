@@ -12,7 +12,8 @@ input_dir=f"{dir_path}{os.sep }sql"
 
 def visualizeFlow(tableName):
     tablesProcessed=[]
-    tables2beProcessed=tableName.copy()
+    tables2beProcessed=[]
+    tables2beProcessed.append(tableName)
     mermaidData=exploreFlow(tables2beProcessed,tablesProcessed,"graph RL;\n")
     print(mermaidData)
     korkiLink="https://kroki.io/mermaid/svg/"+base64.urlsafe_b64encode(zlib.compress(mermaidData.encode('utf-8'), 9)).decode('ascii')
@@ -71,7 +72,10 @@ def processSQL(content):
         dependencies.remove('(\n')
     return(list(set(dependencies)))
 
-visualizeFlow(['EMPLOYEE'])
+tgtTab='EMPLOYEE'
+visualizeFlow(tgtTab)
+
+
 
 
 
