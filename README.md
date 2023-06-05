@@ -1,4 +1,3 @@
-# analyseEtlFlow.py
 ## Table of Contents
 - [analyseEtlFlow.py](#analyseetlflowpy)
   - [Table of Contents](#table-of-contents)
@@ -10,7 +9,7 @@
     - [Mermaid Js Link (Open Via Browser)](#mermaid-js-link-open-via-browser)
   - [5. Future Scope](#5-future-scope)
 ## 1. Introduction
-analyseETLFlow.py is a tool which can be used to Visualise an ETL flow in the form of Mermaid Graph/Flow Diagram.
+analyse-etl-flow.py is a tool which can be used to Visualise an ETL flow in the form of Mermaid Graph/Flow Diagram.
 
 In the feild of data engineering, we often come across SQL code and we try to analyse it and find the dependencies/source & target used in the SQL. For Example, consider the below SQL, lets call it as bus_unit.sql.
 
